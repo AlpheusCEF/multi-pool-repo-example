@@ -106,6 +106,7 @@ def run(dry_run: bool = False) -> None:
                 creator=node["creator"],
                 timestamp=node["timestamp"],
                 tags=node.get("tags", []),
+                related_to=node.get("related_to") or [],
             )
             if result.duplicate:
                 dupes += 1

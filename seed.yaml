@@ -1,0 +1,314 @@
+# Household Registry — Seed Data
+#
+# Authoritative source for the multi-pool-repo-example demo.
+# Run `python seed.py` to recreate the registry and all nodes from scratch.
+# Blow away the registry/ directory first if you want a clean slate.
+#
+# Schema: mirrors alph node frontmatter; timestamp drives node ordering.
+# All nodes are fixed (snapshots) unless node_type is explicitly "live".
+
+registry:
+  id: household
+  context: >-
+    Household asset registry tracking maintenance history, decisions, and
+    status across vehicles, appliances, and remodeling projects.
+  name: Household
+
+pools:
+  vehicles:
+    context: >-
+      Vehicles owned by the household — maintenance logs, repair decisions,
+      purchase and sale records, and insurance/registration notes.
+    layout: subdirectory
+
+  appliances:
+    context: >-
+      Major household appliances — purchase dates, warranty info,
+      repair history, and replacement decisions.
+    layout: subdirectory
+
+  remodeling:
+    context: >-
+      Home improvement and remodeling projects — planning notes, contractor
+      decisions, work completed, and open punch lists.
+    layout: subdirectory
+
+nodes:
+  vehicles:
+    - timestamp: "2021-03-15T09:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Purchased 2018 Honda CR-V EX-L with 41,200 miles from CarMax for $24,800.
+        VIN 2HKRW2H87JH123456. Color: Lunar Silver Metallic.
+      tags: [purchase, crv, honda]
+
+    - timestamp: "2021-06-01T10:30:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        CR-V 5,000-mile oil change (46,200 miles). Synthetic 0W-20. Jiffy Lube
+        on Main St. Also rotated tires — front left had 3mm less tread than
+        others, flagged for monitoring.
+      tags: [maintenance, crv, oil-change]
+
+    - timestamp: "2021-09-10T14:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        CR-V rear brake pads replaced at Honda dealership (50,100 miles).
+        $340 parts and labor. Tech noted front brakes still have ~40% left.
+      tags: [repair, crv, brakes]
+
+    - timestamp: "2022-02-14T08:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Purchased 2020 Toyota RAV4 Hybrid XSE AWD, new, $38,400 after negotiation.
+        VIN JTMEWRFV3LD123789. Color: Supersonic Red. Replaced the aging 2012 Civic
+        that was sold privately for $6,200.
+      tags: [purchase, rav4, toyota, hybrid]
+
+    - timestamp: "2022-08-03T11:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        RAV4 Hybrid first scheduled service at 10,000 miles. Toyota dealer.
+        Multi-point inspection clear. Cabin air filter replaced ($28).
+        No issues flagged.
+      tags: [maintenance, rav4, service]
+
+    - timestamp: "2023-01-20T09:15:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        CR-V battery died overnight in cold snap (-8F). Jump-started. Battery
+        tested weak at AutoZone — original Honda battery at 4.5 years. Replaced
+        with Duralast Gold Group 51R, $189 installed.
+      tags: [repair, crv, battery]
+
+    - timestamp: "2023-06-12T13:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        CR-V 60,000-mile service: spark plugs, air filter, transmission fluid
+        flush, front brake pads. Total $820 at independent shop (Cruz Auto).
+        Tech flagged CV boot on driver side starting to crack — watch it.
+      tags: [maintenance, crv, 60k-service]
+
+    - timestamp: "2024-01-08T10:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        RAV4 Hybrid — minor fender bender in parking lot (other driver's fault).
+        Filed claim with State Farm. Repair at Toyota-certified shop: $2,140.
+        Rental covered. Deductible: $0 (not-at-fault).
+      tags: [repair, rav4, insurance-claim]
+
+    - timestamp: "2024-07-19T09:00:00+00:00"
+      source: cli
+      node_type: live
+      creator: homeowner@example.com
+      context: >-
+        CR-V CV boot on driver side confirmed torn — oil visible on inner wheel
+        well. Cruz Auto quote: $420 for CV axle replacement. Scheduling for
+        next week. Do not ignore — will eventually damage transmission.
+      tags: [repair, crv, cv-axle, open]
+
+  appliances:
+    - timestamp: "2019-11-28T12:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Purchased LG French Door refrigerator (LRMVS3006S) Black Friday sale
+        at Best Buy. $1,840 delivered. 5-year extended warranty purchased ($180).
+        Replaced original builder-grade fridge that came with the house.
+      tags: [purchase, refrigerator, lg]
+
+    - timestamp: "2020-04-14T15:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Washer (Maytag MVWB865GW, purchased 2017 with house) threw F5 E3 error
+        (lid latch). Replaced lid latch assembly ourselves using YouTube tutorial.
+        Part: $34 from AppliancePartsPros. Worked immediately.
+      tags: [repair, washer, maytag, diy]
+
+    - timestamp: "2021-03-01T10:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        HVAC annual spring service. Cook's Heating and Cooling. Cleaned coils,
+        checked refrigerant (good), replaced filter. Tech flagged capacitor
+        showing weak — recommended proactive replacement. Done: $85.
+        Full tune-up: $140.
+      tags: [maintenance, hvac, seasonal]
+
+    - timestamp: "2021-09-20T14:30:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Dishwasher (KitchenAid KDTM354DSS, original to house, ~2015) stopped
+        draining. Checked drain hose — kinked behind cabinet. Unkinked and
+        zip-tied clear of cabinet wall. No parts needed. 30-minute fix.
+      tags: [repair, dishwasher, kitchenaid, diy]
+
+    - timestamp: "2022-07-04T09:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        HVAC compressor failed on July 4th weekend. 92F outside. Cook's came
+        out next day (holiday rate). Compressor and contactor replaced: $1,640.
+        System is 11 years old — tech recommends planning full replacement
+        within 2-3 years. Added to remodeling planning list.
+      tags: [repair, hvac, compressor, major]
+
+    - timestamp: "2023-02-10T11:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Replaced Maytag dryer heating element (original dryer, ~2017). Clothes
+        taking 2+ cycles to dry. Part $48 from AppliancePartsPros, DIY install,
+        1.5 hours. Working perfectly.
+      tags: [repair, dryer, maytag, diy]
+
+    - timestamp: "2023-11-15T10:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Water heater (Bradford White 50-gal, installed 2014) showing rust-colored
+        water and rumbling noise — classic anode rod failure/sediment buildup.
+        Age 9 years — elected to replace rather than repair. Plumber (Ace Plumbing)
+        replaced with same model: $1,280 installed.
+      tags: [replacement, water-heater, major]
+
+    - timestamp: "2024-03-01T09:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        LG refrigerator ice maker stopped producing ice. Confirmed not a water
+        line issue. LG service tech: ice maker assembly needs replacement.
+        Still under extended warranty (expires Nov 2024). Repair covered: $0.
+        Part ordered, appointment in 2 weeks.
+      tags: [repair, refrigerator, lg, warranty]
+
+    - timestamp: "2024-09-05T13:00:00+00:00"
+      source: cli
+      node_type: live
+      creator: homeowner@example.com
+      context: >-
+        HVAC system (original 2013 install, repaired 2022) is 11 years old and
+        running less efficiently. Getting 3 quotes for full system replacement
+        (16 SEER2 heat pump). Cook's quote: $8,400. Two more quotes pending.
+        Considering doing this before winter.
+      tags: [planning, hvac, replacement, open]
+
+  remodeling:
+    - timestamp: "2020-08-15T10:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Repainted entire interior (1,900 sq ft, all rooms). DIY with help from
+        family. Used Sherwin-Williams Emerald in Accessible Beige (living areas)
+        and Repose Gray (bedrooms). Paint + supplies: $680. 4-day project.
+      tags: [painting, diy, interior]
+
+    - timestamp: "2021-05-10T09:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Replaced master bathroom vanity and fixtures. Removed builder-grade
+        single sink vanity, installed 60" double vanity (Allen + Roth from
+        Lowe's, $840). Plumber for supply/drain hookup: $320. Total: ~$1,200.
+      tags: [bathroom, vanity, master-bath]
+
+    - timestamp: "2021-11-01T10:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Added attic insulation blown-in R-38. Original insulation was R-19.
+        Local insulation company (AllSeal). 1,800 sq ft attic. $1,640.
+        Expecting to see heating/cooling bills drop 15-20%.
+      tags: [insulation, energy-efficiency, attic]
+
+    - timestamp: "2022-04-22T11:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Back deck rebuilt. Original deck (2005 build) had rotting joists.
+        Contractor: Landmark Decks. 320 sq ft composite decking (TimberTech
+        Azek). Rebuilt substructure with pressure-treated lumber. $14,200.
+        10-year warranty on decking material.
+      tags: [deck, major, exterior, landmark-decks]
+
+    - timestamp: "2022-10-14T09:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Kitchen countertops replaced. Builder laminate removed, installed
+        3cm quartz (MSI Calacatta Laza) by local fabricator (Stone Works).
+        Also added undermount sink and new Moen faucet. Total: $4,800.
+      tags: [kitchen, countertops, quartz]
+
+    - timestamp: "2023-04-03T14:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Basement waterproofing — had standing water after heavy rain two winters.
+        BrightWall system installed by BasementSystems franchise. Interior
+        drain tile + sump pump replacement + wall panels. $6,800.
+        Lifetime transferable warranty.
+      tags: [basement, waterproofing, major]
+
+    - timestamp: "2023-09-18T10:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Guest bathroom full gut remodel. Original 1998 tile, pink vanity
+        removed. New 36" vanity, subway tile surround, niche, LVP floor.
+        Contractor: River City Tile. $7,400. 3-week project.
+      tags: [bathroom, remodel, guest-bath]
+
+    - timestamp: "2024-02-28T10:00:00+00:00"
+      source: cli
+      node_type: fixed
+      creator: homeowner@example.com
+      context: >-
+        Replaced all exterior doors (front, back, side garage access). Doors
+        were original 1998, poor insulation seals. Installed Therma-Tru
+        fiberglass. Contractor: Window World. $4,100 including installation.
+      tags: [exterior, doors, energy-efficiency]
+
+    - timestamp: "2024-08-10T09:00:00+00:00"
+      source: cli
+      node_type: live
+      creator: homeowner@example.com
+      context: >-
+        Planning kitchen full remodel for 2025. Getting design consults now.
+        Scope: cabinets (existing quartz stays), appliances, backsplash, lighting,
+        flooring. Budget target $30-40k. Have consult with Kitchen & Bath Studio
+        on Aug 20th, and another with IKEA kitchen designer Sept 5th.
+      tags: [kitchen, planning, 2025, open]

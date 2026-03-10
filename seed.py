@@ -79,10 +79,12 @@ def run(dry_run: bool = False) -> None:
     # Init pools
     for pool_name, pool_cfg in pools.items():
         pool_result = init_pool(
-            registry_path=REGISTRY_DIR,
+            registry_id=reg["id"],
             name=pool_name,
             context=pool_cfg["context"],
             layout=pool_cfg.get("layout", "subdirectory"),
+            cwd=REGISTRY_DIR,
+            global_config_dir=REGISTRY_DIR,  # seed is self-contained; no user global config
         )
         if not pool_result.valid:
             for e in pool_result.errors:

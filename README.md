@@ -28,8 +28,8 @@ python seed.py --dry-run
 registry/
   config.yaml           # registry + pool declarations
   vehicles/             # pool: maintenance logs, purchase/sale records
-    snapshots/          # fixed nodes (past events)
-    pointers/           # live nodes (open items)
+    snapshots/          # snapshot nodes (past events)
+    live/               # live nodes (open items)
     .alph/
   appliances/           # pool: purchase dates, repairs, replacements
     ...

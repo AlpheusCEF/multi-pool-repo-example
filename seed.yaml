@@ -5,7 +5,7 @@
 # Blow away the registry/ directory first if you want a clean slate.
 #
 # Schema: mirrors alph node frontmatter; timestamp drives node ordering.
-# All nodes are fixed (snapshots) unless node_type is explicitly "live".
+# All nodes are snapshot type unless node_type is explicitly "live".
 
 registry:
   id: household
@@ -37,7 +37,7 @@ nodes:
   vehicles:
     - timestamp: "2021-03-15T09:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Purchased 2018 Honda CR-V EX-L with 41,200 miles from CarMax for $24,800.
@@ -46,7 +46,7 @@ nodes:
 
     - timestamp: "2021-06-01T10:30:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         CR-V 5,000-mile oil change (46,200 miles). Synthetic 0W-20. Jiffy Lube
@@ -56,7 +56,7 @@ nodes:
 
     - timestamp: "2021-09-10T14:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         CR-V rear brake pads replaced at Honda dealership (50,100 miles).
@@ -65,7 +65,7 @@ nodes:
 
     - timestamp: "2022-02-14T08:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Purchased 2020 Toyota RAV4 Hybrid XSE AWD, new, $38,400 after negotiation.
@@ -75,7 +75,7 @@ nodes:
 
     - timestamp: "2022-08-03T11:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         RAV4 Hybrid first scheduled service at 10,000 miles. Toyota dealer.
@@ -85,7 +85,7 @@ nodes:
 
     - timestamp: "2023-01-20T09:15:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         CR-V battery died overnight in cold snap (-8F). Jump-started. Battery
@@ -95,7 +95,7 @@ nodes:
 
     - timestamp: "2023-06-12T13:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         CR-V 60,000-mile service: spark plugs, air filter, transmission fluid
@@ -105,7 +105,7 @@ nodes:
 
     - timestamp: "2024-01-08T10:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         RAV4 Hybrid — minor fender bender in parking lot (other driver's fault).
@@ -127,7 +127,7 @@ nodes:
   appliances:
     - timestamp: "2019-11-28T12:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Purchased LG French Door refrigerator (LRMVS3006S) Black Friday sale
@@ -137,7 +137,7 @@ nodes:
 
     - timestamp: "2020-04-14T15:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Washer (Maytag MVWB865GW, purchased 2017 with house) threw F5 E3 error
@@ -147,7 +147,7 @@ nodes:
 
     - timestamp: "2021-03-01T10:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         HVAC annual spring service. Cook's Heating and Cooling. Cleaned coils,
@@ -158,7 +158,7 @@ nodes:
 
     - timestamp: "2021-09-20T14:30:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Dishwasher (KitchenAid KDTM354DSS, original to house, ~2015) stopped
@@ -168,7 +168,7 @@ nodes:
 
     - timestamp: "2022-07-04T09:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         HVAC compressor failed on July 4th weekend. 92F outside. Cook's came
@@ -179,7 +179,7 @@ nodes:
 
     - timestamp: "2023-02-10T11:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Replaced Maytag dryer heating element (original dryer, ~2017). Clothes
@@ -189,7 +189,7 @@ nodes:
 
     - timestamp: "2023-11-15T10:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Water heater (Bradford White 50-gal, installed 2014) showing rust-colored
@@ -200,7 +200,7 @@ nodes:
 
     - timestamp: "2024-03-01T09:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         LG refrigerator ice maker stopped producing ice. Confirmed not a water
@@ -224,7 +224,7 @@ nodes:
   remodeling:
     - timestamp: "2020-08-15T10:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Repainted entire interior (1,900 sq ft, all rooms). DIY with help from
@@ -234,7 +234,7 @@ nodes:
 
     - timestamp: "2021-05-10T09:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Replaced master bathroom vanity and fixtures. Removed builder-grade
@@ -244,7 +244,7 @@ nodes:
 
     - timestamp: "2021-11-01T10:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Added attic insulation blown-in R-38. Original insulation was R-19.
@@ -254,7 +254,7 @@ nodes:
 
     - timestamp: "2022-04-22T11:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Back deck rebuilt. Original deck (2005 build) had rotting joists.
@@ -265,7 +265,7 @@ nodes:
 
     - timestamp: "2022-10-14T09:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Kitchen countertops replaced. Builder laminate removed, installed
@@ -275,7 +275,7 @@ nodes:
 
     - timestamp: "2023-04-03T14:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Basement waterproofing — had standing water after heavy rain two winters.
@@ -286,7 +286,7 @@ nodes:
 
     - timestamp: "2023-09-18T10:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Guest bathroom full gut remodel. Original 1998 tile, pink vanity
@@ -296,7 +296,7 @@ nodes:
 
     - timestamp: "2024-02-28T10:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         Replaced all exterior doors (front, back, side garage access). Doors
@@ -318,7 +318,7 @@ nodes:
 
     - timestamp: "2024-10-01T09:00:00+00:00"
       source: cli
-      node_type: fixed
+      node_type: snapshot
       creator: homeowner@example.com
       context: >-
         2025 capital projects priority list: HVAC replacement (appliances pool)

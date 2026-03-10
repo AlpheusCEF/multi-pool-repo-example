@@ -122,7 +122,7 @@ nodes:
         well. Cruz Auto quote: $420 for CV axle replacement. Scheduling for
         next week. Do not ignore — will eventually damage transmission.
       tags: [repair, crv, cv-axle, open]
-      related_to: ["2079032c3079"]  # CR-V 60k service where CV boot crack was first flagged
+      related_to: ["b4344a31f5ef"]  # CR-V 60k service where CV boot crack was first flagged
 
   appliances:
     - timestamp: "2019-11-28T12:00:00+00:00"
@@ -219,7 +219,7 @@ nodes:
         (16 SEER2 heat pump). Cook's quote: $8,400. Two more quotes pending.
         Considering doing this before winter.
       tags: [planning, hvac, replacement, open]
-      related_to: ["704140bf6386"]  # HVAC compressor failure that triggered replacement planning
+      related_to: ["436132b135a0"]  # HVAC compressor failure that triggered replacement planning
 
   remodeling:
     - timestamp: "2020-08-15T10:00:00+00:00"
@@ -314,7 +314,7 @@ nodes:
         flooring. Budget target $30-40k. Have consult with Kitchen & Bath Studio
         on Aug 20th, and another with IKEA kitchen designer Sept 5th.
       tags: [kitchen, planning, "2025", open]
-      related_to: ["7717fc667370"]  # Kitchen countertops install — quartz stays, scoping around it
+      related_to: ["28ba036663e4"]  # Kitchen countertops install — quartz stays, scoping around it
 
     - timestamp: "2024-10-01T09:00:00+00:00"
       source: cli
@@ -326,4 +326,4 @@ nodes:
         come first — Cook's won't schedule kitchen work while HVAC is open.
         Combined budget ceiling: $50k. Review both before committing to either.
       tags: [planning, "2025", hvac, kitchen, capital]
-      related_to: ["appliances::a76746c51d46", "3f9a51c99832"]  # cross-pool: HVAC live node + kitchen remodel planning live
+      related_to: ["appliances::b2d4bc365387", "9fd88fff72f8"]  # cross-pool: HVAC live node + kitchen remodel planning live

@@ -19,19 +19,19 @@ pools:
     context: >-
       Vehicles owned by the household — maintenance logs, repair decisions,
       purchase and sale records, and insurance/registration notes.
-    layout: subdirectory
+    pool_type: subdir
 
   appliances:
     context: >-
       Major household appliances — purchase dates, warranty info,
       repair history, and replacement decisions.
-    layout: subdirectory
+    pool_type: subdir
 
   remodeling:
     context: >-
       Home improvement and remodeling projects — planning notes, contractor
       decisions, work completed, and open punch lists.
-    layout: subdirectory
+    pool_type: subdir
 
 nodes:
   vehicles:

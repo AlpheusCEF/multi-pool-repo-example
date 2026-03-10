@@ -65,10 +65,11 @@ def run(dry_run: bool = False) -> None:
 
     # Init registry
     reg_result = init_registry(
-        path=REGISTRY_DIR,
+        pool_home=REGISTRY_DIR,
         registry_id=reg["id"],
         context=reg["context"],
         name=reg.get("name", ""),
+        global_config_dir=REGISTRY_DIR,  # seed is self-contained; no user global config
     )
     if not reg_result.valid:
         for e in reg_result.errors:
@@ -82,7 +83,7 @@ def run(dry_run: bool = False) -> None:
             registry_id=reg["id"],
             name=pool_name,
             context=pool_cfg["context"],
-            layout=pool_cfg.get("layout", "subdirectory"),
+            pool_type=pool_cfg.get("pool_type", "subdir"),
             cwd=REGISTRY_DIR,
             global_config_dir=REGISTRY_DIR,  # seed is self-contained; no user global config
         )

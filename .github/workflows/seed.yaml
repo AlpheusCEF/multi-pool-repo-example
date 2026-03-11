@@ -1,0 +1,40 @@
+name: Seed registry data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "seed.yaml"
+      - "seed.py"
+  workflow_dispatch:
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install alph-cli
+        run: pip install alph-cli
+
+      - name: Generate registry from seed data
+        run: python seed.py --wipe
+
+      - name: Commit and push to seeded branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Remove registry/ from .gitignore for the seeded branch
+          sed -i '/^registry\//d' .gitignore
+
+          git checkout -B seeded
+          git add registry/ .gitignore
+          git commit -m "chore: regenerate seed data from seed.yaml" || echo "No changes to commit"
+          git push --force origin seeded

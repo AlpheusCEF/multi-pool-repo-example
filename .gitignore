@@ -1,5 +1,4 @@
 # Generated registry — recreate with: python seed.py
-registry/
 pools/
 __pycache__/
 .DS_Store

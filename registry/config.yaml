@@ -1,0 +1,21 @@
+default_pool: vehicles
+default_registry: household
+registries:
+  household:
+    context: Household asset registry tracking maintenance history, decisions, and
+      status across vehicles, appliances, and remodeling projects.
+    name: Household
+    pool_home: /home/runner/work/multi-pool-repo-example/multi-pool-repo-example/registry
+    pools:
+      appliances:
+        context: Major household appliances — purchase dates, warranty info, repair
+          history, and replacement decisions.
+        type: subdir
+      remodeling:
+        context: Home improvement and remodeling projects — planning notes, contractor
+          decisions, work completed, and open punch lists.
+        type: subdir
+      vehicles:
+        context: Vehicles owned by the household — maintenance logs, repair decisions,
+          purchase and sale records, and insurance/registration notes.
+        type: subdir

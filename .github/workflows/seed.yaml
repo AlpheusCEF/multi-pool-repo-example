@@ -21,7 +21,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install alph-cli
-        run: pip install alph-cli
+        run: pip install "alph-cli @ git+https://github.com/AlpheusCEF/alph-cli.git"
 
       - name: Generate registry from seed data
         run: python seed.py --wipe
